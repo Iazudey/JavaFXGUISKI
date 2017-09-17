@@ -13,18 +13,24 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
 
+import javax.swing.*;
+
 
 public class Main extends Application implements EventHandler<ActionEvent> {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
 
-        GridPane grid = new GridPane();
-        grid.setPadding(new Insets(10,10,10,10));
-        grid.setVgap(8);
-        grid.setHgap(10);
+
+        Scene scen = new Scene(new SkiWorld());
+        primaryStage.setTitle("Welcome to Skiworld!");
+        primaryStage.setScene(scen);
+        primaryStage.show();
 
 
+
+
+              /* Gammal kod från gridtest.
         Label nameLabel = new Label("Username");
         GridPane.setConstraints(nameLabel, 0,0);
 
@@ -44,15 +50,12 @@ public class Main extends Application implements EventHandler<ActionEvent> {
 
         grid.getChildren().addAll(nameLabel, nameInput, pwLabel, pwInput, loginButton);
 
-        primaryStage.setTitle("Welcome to Skiworld!");
-        primaryStage.setScene(new Scene(grid, 300, 150  ));
-        primaryStage.show();
+        */
 
     }
 
     @Override
     public void handle(ActionEvent event) {
-
 
 
     }
